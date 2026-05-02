@@ -63,21 +63,26 @@ nav a:hover{
 
   padding:120px 20px 80px;
 }
-}
-
 .banner h1{
-
-  font-size:75px;
-  color:gold;
+  font-size:90px;
+  color:#ffd700;
   text-transform:uppercase;
-  margin-bottom:20px;
-}
+  letter-spacing:3px;
+  font-weight:900;
 
-.banner p{
-  font-size:26px;
-  max-width:850px;
-  margin:auto;
-  color:#eee;
+  /* EFEITO OURO */
+  background: linear-gradient(45deg, #ffd700, #fff8dc, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* BRILHO */
+  text-shadow:
+    0 0 5px rgba(255,215,0,0.8),
+    0 0 10px rgba(255,215,0,0.6),
+    0 0 20px rgba(255,215,0,0.5);
+
+  /* ANIMAÇÃO LEVE */
+  animation: brilho 3s infinite alternate;
 }
 
 .btn{
