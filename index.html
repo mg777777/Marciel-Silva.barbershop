@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marciel Silva Barber Shop</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>Marciel Silva Barber Shop</title>
 
 <style>
 *{
@@ -19,19 +18,38 @@ html{
 }
 
 body{
-  font-family:'Poppins', sans-serif;
   background:#080808;
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+nav{
+  width:100%;
+  background:#000;
+  padding:18px;
+  text-align:center;
+  border-bottom:2px solid gold;
+  position:fixed;
+  top:0;
+  z-index:999;
+}
+
+nav a{
+  color:gold;
+  text-decoration:none;
+  margin:0 15px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+nav a:hover{
   color:white;
 }
 
-h1,h2,h3{
-  font-family:'Cinzel', serif;
-}
-
-header{
+.banner{
   min-height:100vh;
   background:
-  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+  linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.95)),
   url("salao1.jpg");
   background-size:cover;
   background-position:center;
@@ -39,61 +57,33 @@ header{
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:40px 20px;
+  padding:120px 20px 60px;
 }
 
-.logo{
-  width:260px;
-  background:white;
-  padding:12px;
-  border-radius:18px;
-  margin-bottom:25px;
-  box-shadow:0 0 35px rgba(255,215,0,.6);
-}
-
-header h1{
-  font-size:78px;
-  color:#ffd700;
+.banner h1{
+  font-size:75px;
+  color:gold;
   text-transform:uppercase;
-  letter-spacing:3px;
-  text-shadow:
-  0 0 8px #ffd700,
-  0 0 18px #d4af37,
-  0 0 35px #8b6508;
-  animation: brilho 2.5s infinite alternate;
+  margin-bottom:20px;
 }
 
-@keyframes brilho{
-  from{
-    text-shadow:
-    0 0 6px #ffd700,
-    0 0 14px #d4af37;
-  }
-  to{
-    text-shadow:
-    0 0 12px #ffd700,
-    0 0 28px #ffd700,
-    0 0 55px #b8860b;
-  }
-}
-
-header p{
-  font-size:25px;
-  margin:25px auto;
+.banner p{
+  font-size:26px;
   max-width:850px;
+  margin:auto;
   color:#eee;
 }
 
 .btn{
   display:inline-block;
-  background:linear-gradient(45deg,#8b6508,#ffd700,#b8860b);
-  color:#000;
+  margin-top:30px;
+  background:linear-gradient(45deg,#b8860b,#ffd700,#b8860b);
+  color:black;
   padding:18px 35px;
-  border-radius:14px;
+  border-radius:12px;
   text-decoration:none;
-  font-weight:800;
   font-size:20px;
-  margin:10px;
+  font-weight:bold;
   transition:.3s;
 }
 
@@ -108,37 +98,45 @@ section{
 
 .titulo{
   text-align:center;
-  font-size:52px;
-  color:#ffd700;
+  color:gold;
+  font-size:48px;
   margin-bottom:45px;
   text-transform:uppercase;
-  text-shadow:0 0 18px rgba(255,215,0,.8);
+}
+
+.sobre{
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+  font-size:22px;
+  line-height:1.8;
+  color:#ddd;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:25px;
 }
 
 .card{
   background:#111;
   padding:35px;
-  border-radius:20px;
-  border:1px solid #333;
+  border-radius:18px;
   text-align:center;
+  border:1px solid #333;
   transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  border-color:#ffd700;
-  box-shadow:0 0 28px rgba(255,215,0,.35);
+  border-color:gold;
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(255,215,0,.3);
 }
 
 .card h3{
-  color:#ffd700;
-  font-size:30px;
+  color:gold;
+  font-size:28px;
   margin-bottom:15px;
 }
 
@@ -148,89 +146,224 @@ section{
 }
 
 .preco{
-  font-size:38px;
-  color:#ffd700;
-  font-weight:800;
-  margin-top:15px;
+  color:gold;
+  font-size:36px;
+  font-weight:bold;
+  margin-top:20px;
+}
+
+.perfil{
+  display:flex;
+  gap:35px;
+  align-items:center;
+  background:#111;
+  padding:40px;
+  border-radius:22px;
+  border:1px solid gold;
+}
+
+.perfil img{
+  width:280px;
+  height:280px;
+  object-fit:cover;
+  border-radius:18px;
+  border:2px solid gold;
+}
+
+.perfil h3{
+  color:gold;
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.perfil p{
+  font-size:20px;
+  line-height:1.7;
+  color:#ddd;
 }
 
 .agendamento{
-  max-width:750px;
+  max-width:800px;
   margin:auto;
   background:#111;
   padding:40px;
-  border-radius:25px;
-  border:1px solid #d4af37;
+  border-radius:22px;
+  border:1px solid gold;
 }
 
 input,select,textarea{
   width:100%;
   padding:18px;
-  margin-bottom:15px;
+  margin-bottom:16px;
   border:none;
-  border-radius:12px;
+  border-radius:10px;
   font-size:18px;
 }
 
 button{
   width:100%;
   padding:18px;
+  background:linear-gradient(45deg,#b8860b,#ffd700,#b8860b);
+  color:black;
   border:none;
-  border-radius:12px;
-  background:linear-gradient(45deg,#8b6508,#ffd700,#b8860b);
-  color:#000;
+  border-radius:10px;
   font-size:20px;
-  font-weight:900;
+  font-weight:bold;
   cursor:pointer;
+}
+
+button:hover{
+  box-shadow:0 0 25px gold;
 }
 
 .galeria{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
+  gap:22px;
 }
 
 .galeria img{
   width:100%;
   height:320px;
   object-fit:cover;
-  border-radius:20px;
-  border:2px solid #d4af37;
+  border-radius:18px;
+  border:2px solid gold;
 }
 
-.local{
-  text-align:center;
+.comentarios{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 
-.local p{
+.comentario{
+  background:#111;
+  padding:30px;
+  border-radius:18px;
+  border-left:6px solid gold;
+}
+
+.estrelas{
+  color:gold;
+  font-size:26px;
+  margin-bottom:12px;
+}
+
+.comentario h4{
+  color:gold;
   font-size:24px;
-  margin-bottom:25px;
+  margin-bottom:10px;
 }
 
-.local img{
-  width:100%;
-  max-height:600px;
-  object-fit:cover;
+.comentario p{
+  font-size:19px;
+  color:#ddd;
+}
+
+.localizacao-box{
+  max-width:1100px;
+  margin:auto;
+  background:#111;
   border-radius:25px;
-  border:2px solid #d4af37;
-  box-shadow:0 0 35px rgba(255,215,0,.25);
+  overflow:hidden;
+  border:2px solid gold;
+}
+
+.localizacao-info{
+  text-align:center;
+  padding:40px;
+}
+
+.localizacao-info h3{
+  color:gold;
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.localizacao-info p{
+  font-size:23px;
+  color:#eee;
+}
+
+.foto-local{
+  width:100%;
+  height:550px;
+  object-fit:cover;
+  display:block;
+}
+
+.area-botao-local{
+  text-align:center;
+  padding:35px;
+}
+
+.btn-local{
+  display:inline-block;
+  background:linear-gradient(45deg,#b8860b,#ffd700,#b8860b);
+  color:black;
+  padding:20px 40px;
+  border-radius:15px;
+  text-decoration:none;
+  font-size:23px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn-local:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px gold;
 }
 
 footer{
   background:#000;
   text-align:center;
   padding:35px;
-  border-top:1px solid #d4af37;
+  border-top:1px solid gold;
+}
+
+footer p{
   color:#aaa;
+  font-size:18px;
+}
+
+footer span{
+  color:gold;
 }
 
 @media(max-width:800px){
-  header h1{
-    font-size:45px;
+  nav{
+    position:static;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:7px;
+  }
+
+  .banner h1{
+    font-size:42px;
+  }
+
+  .banner p{
+    font-size:20px;
   }
 
   .titulo{
-    font-size:36px;
+    font-size:34px;
+  }
+
+  .perfil{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .perfil img{
+    width:240px;
+    height:240px;
+  }
+
+  .foto-local{
+    height:350px;
   }
 }
 </style>
@@ -238,26 +371,40 @@ footer{
 
 <body>
 
-<header>
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#valores">Valores</a>
+  <a href="#agendar">Agendar</a>
+  <a href="#fotos">Fotos</a>
+  <a href="#localizacao">Localização</a>
+</nav>
+
+<header class="banner" id="inicio">
   <div>
-    <img src="logo.png" class="logo" alt="Logo Marciel Silva">
-
-    <h1> Marciel Silva  Barber Shop </h1>
-
-    <p>💈 O atendimento é diferenciado, o cuidado com o cliente é outro nível, e o resultado fala por si só. Quem senta na cadeira sai com mais estilo, mais confiança e sabendo que fez a escolha certa.</p>
-
-    <a href="#agendar" class="btn">📲 Agendar agora</a>
-    <a href="#valores" class="btn">💰 Ver valores</a>
+    <h1>Marciel Silva Barber Shop</h1>
+    <p>Estilo, qualidade e atendimento profissional para quem valoriza o visual.</p>
+    <a href="#agendar" class="btn">Agendar agora</a>
   </div>
 </header>
 
 <section>
-  <h2 class="titulo">💈 Serviços</h2>
+  <h2 class="titulo">Sobre a Barbearia</h2>
+
+  <p class="sobre">
+    A Marciel Silva Barber Shop é uma barbearia pensada para quem busca mais do que um corte.
+    Aqui o cliente encontra atendimento de qualidade, cuidado nos detalhes e um ambiente preparado
+    para entregar uma experiência completa.
+  </p>
+</section>
+
+<section id="servicos">
+  <h2 class="titulo">Serviços</h2>
 
   <div class="cards">
     <div class="card">
       <h3>✂️ Corte Masculino</h3>
-      <p>Cortes modernos, sociais, degradê e estilos personalizados.</p>
+      <p>Cortes modernos, clássicos, sociais e personalizados.</p>
     </div>
 
     <div class="card">
@@ -266,45 +413,78 @@ footer{
     </div>
 
     <div class="card">
-      <h3>🔥 Corte + Barba</h3>
-      <p>Pacote completo para renovar o visual.</p>
+      <h3>💈 Corte + Barba</h3>
+      <p>Pacote completo para renovar o visual com estilo.</p>
     </div>
 
     <div class="card">
-      <h3>💎 Acabamento</h3>
-      <p>Pezinho, contorno e detalhes para manter o estilo em dia.</p>
+      <h3>🔥 Acabamento</h3>
+      <p>Pezinho, contorno e detalhes para manter o visual em dia.</p>
     </div>
   </div>
 </section>
 
 <section id="valores">
-  <h2 class="titulo">💰 Valores</h2>
+  <h2 class="titulo">Valores</h2>
 
   <div class="cards">
     <div class="card">
-      <h3>✂️ Corte</h3>
+      <h3>Corte</h3>
+      <p>A partir de</p>
       <div class="preco">R$ --</div>
     </div>
 
     <div class="card">
-      <h3>🧔 Barba</h3>
+      <h3>Barba</h3>
+      <p>A partir de</p>
       <div class="preco">R$ --</div>
     </div>
 
     <div class="card">
-      <h3>🔥 Combo</h3>
+      <h3>Corte + Barba</h3>
+      <p>A partir de</p>
+      <div class="preco">R$ --</div>
+    </div>
+
+    <div class="card">
+      <h3>Acabamento</h3>
+      <p>A partir de</p>
       <div class="preco">R$ --</div>
     </div>
   </div>
 </section>
 
+<section>
+  <h2 class="titulo">Fale com o Marciel</h2>
+
+  <div class="perfil">
+    <img src="marciel.jpg" alt="Foto do Marciel">
+
+    <div>
+      <h3>Marciel Silva</h3>
+
+      <p>
+        Profissional responsável pela Marciel Silva Barber Shop, dedicado a entregar
+        cortes bem feitos, atendimento de qualidade e atenção em cada detalhe.
+      </p>
+
+      <p><strong>WhatsApp:</strong> (13) 98820-9274</p>
+
+      <a href="https://wa.me/5513988209274" target="_blank" class="btn">
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="agendar">
-  <h2 class="titulo">📲 Agendamento</h2>
+  <h2 class="titulo">Agendamento</h2>
 
   <div class="agendamento">
-    <input id="nome" placeholder="Seu nome">
+    <input type="text" id="nome" placeholder="Seu nome">
 
     <select id="servico">
+      <option value="">Escolha o serviço</option>
       <option>Corte Masculino</option>
       <option>Barba</option>
       <option>Corte + Barba</option>
@@ -312,16 +492,17 @@ footer{
     </select>
 
     <input type="date" id="data">
+
     <input type="time" id="hora">
 
     <textarea id="mensagem" placeholder="Observação (opcional)"></textarea>
 
-    <button onclick="agendar()">💈 Enviar agendamento pelo WhatsApp</button>
+    <button onclick="agendar()">Enviar agendamento pelo WhatsApp</button>
   </div>
 </section>
 
-<section>
-  <h2 class="titulo">📸 Fotos do Salão</h2>
+<section id="fotos">
+  <h2 class="titulo">Fotos do Salão</h2>
 
   <div class="galeria">
     <img src="salao1.jpg" alt="Foto do salão">
@@ -331,44 +512,56 @@ footer{
 </section>
 
 <section>
-  <h2 class="titulo">⭐ Avaliações</h2>
+  <h2 class="titulo">Avaliações</h2>
 
-  <div class="cards">
-    <div class="card">
-      <h3>★★★★★</h3>
-      <p>“Atendimento excelente e corte muito bem feito.”</p>
+  <div class="comentarios">
+    <div class="comentario">
+      <div class="estrelas">★★★★★</div>
+      <h4>Atendimento excelente</h4>
+      <p>“Ótimo atendimento, corte bem feito e ambiente agradável.”</p>
     </div>
 
-    <div class="card">
-      <h3>★★★★★</h3>
-      <p>“Barbearia organizada e profissional de qualidade.”</p>
+    <div class="comentario">
+      <div class="estrelas">★★★★★</div>
+      <h4>Profissional de qualidade</h4>
+      <p>“Marciel trabalha com capricho e atenção nos detalhes.”</p>
     </div>
 
-    <div class="card">
-      <h3>★★★★★</h3>
-      <p>“Recomendo muito, resultado excelente.”</p>
+    <div class="comentario">
+      <div class="estrelas">★★★★★</div>
+      <h4>Recomendo muito</h4>
+      <p>“Barbearia organizada, atendimento bom e resultado excelente.”</p>
     </div>
   </div>
 </section>
 
-<section class="local">
-  <h2 class="titulo">📍 Localização</h2>
+<section id="localizacao">
+  <h2 class="titulo">Localização</h2>
 
-  <p>Av. Senador Pinheiro Machado, 771 - Campo Grande, Santos - SP</p>
+  <div class="localizacao-box">
+    <div class="localizacao-info">
+      <h3>Estamos em Santos</h3>
 
-  <img src="salao1.jpg" alt="Foto do local">
+      <p>
+        Av. Senador Pinheiro Machado, 771 - Campo Grande,
+        Santos - SP, 11075-003
+      </p>
+    </div>
 
-  <br>
+    <img src="salao1.jpg" class="foto-local" alt="Foto do salão">
 
-  <a class="btn" target="_blank"
-  href="https://www.google.com/maps/dir/?api=1&destination=Av.+Senador+Pinheiro+Machado,+771,+Campo+Grande,+Santos,+SP">
-    📍 Ver localização
-  </a>
+    <div class="area-botao-local">
+      <a class="btn-local" target="_blank"
+      href="https://www.google.com/maps/dir/?api=1&destination=Av.+Senador+Pinheiro+Machado,+771,+Campo+Grande,+Santos,+SP">
+        📍 Ver localização
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Marciel Silva Barber Shop</p>
-  <p>💻 Site criado por Miguel Santiago</p>
+  <p>© 2026 <span>Marciel Silva Barber Shop</span></p>
+  <p>Site criado por Miguel Santiago</p>
 </footer>
 
 <script>
@@ -382,7 +575,7 @@ function agendar(){
   let texto =
   `Olá, vim pelo site da Marciel Silva Barber Shop.%0A%0A` +
   `Nome: ${nome}%0A` +
-  `Serviço: ${servico}%0A` +
+  `Serviço desejado: ${servico}%0A` +
   `Data: ${data}%0A` +
   `Horário: ${hora}`;
 
