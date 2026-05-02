@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marciel Silva Barber Shop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#080808;
+  color:white;
+}
+
+h1,h2,h3{
+  font-family:'Cinzel', serif;
+}
+
+header{
+  min-height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+  url("salao1.jpg");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.logo{
+  width:260px;
+  background:white;
+  padding:12px;
+  border-radius:18px;
+  margin-bottom:25px;
+  box-shadow:0 0 35px rgba(255,215,0,.6);
+}
+
+header h1{
+  font-size:78px;
+  color:#ffd700;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  text-shadow:
+  0 0 8px #ffd700,
+  0 0 18px #d4af37,
+  0 0 35px #8b6508;
+  animation: brilho 2.5s infinite alternate;
+}
+
+@keyframes brilho{
+  from{
+    text-shadow:
+    0 0 6px #ffd700,
+    0 0 14px #d4af37;
+  }
+  to{
+    text-shadow:
+    0 0 12px #ffd700,
+    0 0 28px #ffd700,
+    0 0 55px #b8860b;
+  }
+}
+
+header p{
+  font-size:25px;
+  margin:25px auto;
+  max-width:850px;
+  color:#eee;
+}
+
+.btn{
+  display:inline-block;
+  background:linear-gradient(45deg,#8b6508,#ffd700,#b8860b);
+  color:#000;
+  padding:18px 35px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:20px;
+  margin:10px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px gold;
+}
+
+section{
+  padding:90px 10%;
+}
+
+.titulo{
+  text-align:center;
+  font-size:52px;
+  color:#ffd700;
+  margin-bottom:45px;
+  text-transform:uppercase;
+  text-shadow:0 0 18px rgba(255,215,0,.8);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#111;
+  padding:35px;
+  border-radius:20px;
+  border:1px solid #333;
+  text-align:center;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  border-color:#ffd700;
+  box-shadow:0 0 28px rgba(255,215,0,.35);
+}
+
+.card h3{
+  color:#ffd700;
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.card p{
+  font-size:19px;
+  color:#ddd;
+}
+
+.preco{
+  font-size:38px;
+  color:#ffd700;
+  font-weight:800;
+  margin-top:15px;
+}
+
+.agendamento{
+  max-width:750px;
+  margin:auto;
+  background:#111;
+  padding:40px;
+  border-radius:25px;
+  border:1px solid #d4af37;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:18px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:12px;
+  font-size:18px;
+}
+
+button{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(45deg,#8b6508,#ffd700,#b8860b);
+  color:#000;
+  font-size:20px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.galeria img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:20px;
+  border:2px solid #d4af37;
+}
+
+.local{
+  text-align:center;
+}
+
+.local p{
+  font-size:24px;
+  margin-bottom:25px;
+}
+
+.local img{
+  width:100%;
+  max-height:600px;
+  object-fit:cover;
+  border-radius:25px;
+  border:2px solid #d4af37;
+  box-shadow:0 0 35px rgba(255,215,0,.25);
+}
+
+footer{
+  background:#000;
+  text-align:center;
+  padding:35px;
+  border-top:1px solid #d4af37;
+  color:#aaa;
+}
+
+@media(max-width:800px){
+  header h1{
+    font-size:45px;
+  }
+
+  .titulo{
+    font-size:36px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <img src="logo.png" class="logo" alt="Logo Marciel Silva">
+
+    <h1> Marciel Silva  Barber Shop </h1>
+
+    <p>💈 O atendimento é diferenciado, o cuidado com o cliente é outro nível, e o resultado fala por si só. Quem senta na cadeira sai com mais estilo, mais confiança e sabendo que fez a escolha certa.</p>
+
+    <a href="#agendar" class="btn">📲 Agendar agora</a>
+    <a href="#valores" class="btn">💰 Ver valores</a>
+  </div>
+</header>
+
+<section>
+  <h2 class="titulo">💈 Serviços</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>✂️ Corte Masculino</h3>
+      <p>Cortes modernos, sociais, degradê e estilos personalizados.</p>
+    </div>
+
+    <div class="card">
+      <h3>🧔 Barba</h3>
+      <p>Barba alinhada, desenhada e finalizada com cuidado.</p>
+    </div>
+
+    <div class="card">
+      <h3>🔥 Corte + Barba</h3>
+      <p>Pacote completo para renovar o visual.</p>
+    </div>
+
+    <div class="card">
+      <h3>💎 Acabamento</h3>
+      <p>Pezinho, contorno e detalhes para manter o estilo em dia.</p>
+    </div>
+  </div>
+</section>
+
+<section id="valores">
+  <h2 class="titulo">💰 Valores</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>✂️ Corte</h3>
+      <div class="preco">R$ --</div>
+    </div>
+
+    <div class="card">
+      <h3>🧔 Barba</h3>
+      <div class="preco">R$ --</div>
+    </div>
+
+    <div class="card">
+      <h3>🔥 Combo</h3>
+      <div class="preco">R$ --</div>
+    </div>
+  </div>
+</section>
+
+<section id="agendar">
+  <h2 class="titulo">📲 Agendamento</h2>
+
+  <div class="agendamento">
+    <input id="nome" placeholder="Seu nome">
+
+    <select id="servico">
+      <option>Corte Masculino</option>
+      <option>Barba</option>
+      <option>Corte + Barba</option>
+      <option>Acabamento</option>
+    </select>
+
+    <input type="date" id="data">
+    <input type="time" id="hora">
+
+    <textarea id="mensagem" placeholder="Observação (opcional)"></textarea>
+
+    <button onclick="agendar()">💈 Enviar agendamento pelo WhatsApp</button>
+  </div>
+</section>
+
+<section>
+  <h2 class="titulo">📸 Fotos do Salão</h2>
+
+  <div class="galeria">
+    <img src="salao1.jpg" alt="Foto do salão">
+    <img src="salao2.jpg" alt="Foto do salão">
+    <img src="salao3.jpg" alt="Foto do salão">
+  </div>
+</section>
+
+<section>
+  <h2 class="titulo">⭐ Avaliações</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>★★★★★</h3>
+      <p>“Atendimento excelente e corte muito bem feito.”</p>
+    </div>
+
+    <div class="card">
+      <h3>★★★★★</h3>
+      <p>“Barbearia organizada e profissional de qualidade.”</p>
+    </div>
+
+    <div class="card">
+      <h3>★★★★★</h3>
+      <p>“Recomendo muito, resultado excelente.”</p>
+    </div>
+  </div>
+</section>
+
+<section class="local">
+  <h2 class="titulo">📍 Localização</h2>
+
+  <p>Av. Senador Pinheiro Machado, 771 - Campo Grande, Santos - SP</p>
+
+  <img src="salao1.jpg" alt="Foto do local">
+
+  <br>
+
+  <a class="btn" target="_blank"
+  href="https://www.google.com/maps/dir/?api=1&destination=Av.+Senador+Pinheiro+Machado,+771,+Campo+Grande,+Santos,+SP">
+    📍 Ver localização
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Marciel Silva Barber Shop</p>
+  <p>💻 Site criado por Miguel Santiago</p>
+</footer>
+
+<script>
+function agendar(){
+  let nome = document.getElementById("nome").value;
+  let servico = document.getElementById("servico").value;
+  let data = document.getElementById("data").value;
+  let hora = document.getElementById("hora").value;
+  let mensagem = document.getElementById("mensagem").value;
+
+  let texto =
+  `Olá, vim pelo site da Marciel Silva Barber Shop.%0A%0A` +
+  `Nome: ${nome}%0A` +
+  `Serviço: ${servico}%0A` +
+  `Data: ${data}%0A` +
+  `Horário: ${hora}`;
+
+  if(mensagem.trim() !== ""){
+    texto += `%0AObservação: ${mensagem}`;
+  }
+
+  window.open(`https://wa.me/5513988209274?text=${texto}`, "_blank");
+}
+</script>
+
+</body>
+</html>
